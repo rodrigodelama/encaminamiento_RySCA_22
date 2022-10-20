@@ -1,3 +1,5 @@
+# Router 4 Configuration file
+
 telnet 192.168.0.1 -> R4
 
 conf t
