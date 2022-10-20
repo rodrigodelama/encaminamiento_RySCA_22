@@ -1,0 +1,21 @@
+telnet 192.168.0.1 -> R4
+
+conf t
+interface lo
+no shutdown
+no ip address 127.0.0.1/8
+ip address 10.0.6.24/32
+exit
+interface eth0.3
+no shutdown
+no ip address 192.168.3.1/24
+ip address 10.0.6.1/30
+exit
+ip route 10.0.6.1/30 10.0.6.2
+interface eth0.1
+no shutdown
+no ip address 192.168.1.1/24
+ip address 10.0.0.6/24
+exit
+ip route 10.0.6.0/24 10.0.6.2
+exit
