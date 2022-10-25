@@ -1,6 +1,8 @@
 # Router 2 Configuration file
 
+sudo ip addr del 192.100.100.100/24 dev eth1
 sudo ip addr add 192.168.0.2/24 dev eth1
+
 telnet 192.168.0.1
 
 conf t
@@ -26,8 +28,10 @@ show interface eth0.3
 show interface eth0.1
 show interface lo
 conf t
-ip route 10.0.0.0/24 10.0.6.1
-ip route 10.0.6.64/26 10.0.6.9
-ip route 10.0.6.128/26 10.0.6.13
+ip route 10.0.0.0/24 10.0.6.1 -> General
+ip route 10.0.6.64/26 10.0.6.9 -> Servers
+ip route 10.0.6.128/26 10.0.6.13 -> Office 1
+ip route 10.0.6.4/30 10.0.6.13 -> R1-R3
+ip route 10.0.6.0/30 10.0.6.9 -> R3-R4
 exit
 show ip route
