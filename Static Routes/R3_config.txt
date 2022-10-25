@@ -1,11 +1,9 @@
 # Router 3 Configuration file
 
-ip addr
 sudo ip addr del 192.100.100.100/24 dev eth1
 sudo ip addr add 192.168.0.2/24 dev eth1
 
 telnet 192.168.0.1
-
 
 conf t
 interface eth0.4
@@ -30,14 +28,11 @@ no ip address 127.0.0.1/8
 ip address 10.0.6.23/32
 exit
 exit
-
-
 show interface eth0.4
 show interface eth0.3
 show interface eth0.2
 show interface eth0.1
 show interface lo
-
 conf t
 ip route 10.0.6.128/26 10.0.6.6   
 ip route 10.0.6.192/27 10.0.6.10
@@ -45,13 +40,4 @@ ip route 10.0.0.0/24 10.0.6.1
 ip route 10.0.6.13/30 10.0.6.6 
 exit
 
-
 show ip route
-
-
-
-
-
-
-
-

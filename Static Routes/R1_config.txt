@@ -3,7 +3,6 @@
 sudo ip addr add 192.168.0.2/24 dev eth1
 telnet 192.168.0.1
 
-
 conf t
 interface eth0.2
 no ip address 192.168.2.1/24
@@ -22,19 +21,13 @@ no ip adress 127.0.0.1/8
 ip adress 10.0.6.21/32
 exit
 exit
-
-
-
 show interface eth0.2
 show interface eth0.3
 show interface eth0.1
 show interface lo
-
 conf t
 ip route 10.0.0.0/24 10.0.6.1
 ip route 10.0.6.64/26 10.0.6.5
 ip route 10.0.6.192/27 10.0.6.14
 exit
-
 show ip route
-

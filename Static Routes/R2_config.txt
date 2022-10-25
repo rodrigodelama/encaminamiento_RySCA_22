@@ -21,17 +21,13 @@ no ip adress 127.0.0.1/8
 ip adress 10.0.6.22/32
 exit
 exit
-
 show interface eth0.2
 show interface eth0.3
 show interface eth0.1
 show interface lo
-
 conf t
 ip route 10.0.0.0/24 10.0.6.1
 ip route 10.0.6.64/26 10.0.6.9
 ip route 10.0.6.128/26 10.0.6.13
 exit
-
 show ip route
-
