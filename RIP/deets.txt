@@ -1,0 +1,9 @@
+this:
+
+network eth0.1
+passive-interface eth0.1 #ONLY FOR RIP
+
+or this:
+
+network eth0.1
+redistribute connected #FOR WHEN WE USE RIP AND OSPF at the same time
