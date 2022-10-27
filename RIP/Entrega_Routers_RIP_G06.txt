@@ -1,0 +1,131 @@
+# Router 1 Configuration file
+
+sudo ip addr del 192.100.100.100/24 dev eth1
+sudo ip addr add 192.168.0.2/24 dev eth1
+telnet 192.168.0.1
+
+conf t
+interface eth0.3
+no ip address 192.168.3.1/24
+ip address 10.0.6.13/30
+exit
+interface eth0.2
+no ip address 192.168.2.1/24
+ip address 10.0.6.6/30
+exit
+interface eth0.1
+no ip address 192.168.1.1/24
+ip address 10.0.6.129/26
+exit
+interface lo
+no ip address 127.0.0.1/8
+ip address 10.0.6.21/32
+exit
+router rip
+network eth0.2
+network eth0.3
+redistribute connected
+exit
+exit
+
+
+show ip route
+
+# Router 2 Configuration file
+
+sudo ip addr del 192.100.100.100/24 dev eth1
+sudo ip addr add 192.168.0.2/24 dev eth1
+
+telnet 192.168.0.1
+
+conf t
+interface eth0.1
+no ip address 192.168.1.1/24
+ip address 10.0.6.193/27
+exit
+interface eth0.3
+no ip address 192.168.3.1/24
+ip address 10.0.6.10/30
+exit
+interface eth0.2
+no ip address 192.168.2.1/24
+ip address 10.0.6.14/30
+exit
+interface lo
+no ip address 127.0.0.1/8
+ip address 10.0.6.22/32
+exit
+router rip
+network eth0.3
+network eth0.2
+redistribute connected
+exit
+show ip route
+
+
+# Router 3 Configuration file
+
+sudo ip addr del 192.100.100.100/24 dev eth1
+sudo ip addr add 192.168.0.2/24 dev eth1
+
+telnet 192.168.0.1
+
+conf t
+interface eth0.2
+no shutdown
+no ip address 192.168.2.1/24
+ip address 10.0.6.2/30
+exit
+interface eth0.1
+no ip address 192.168.1.1/24
+ip address 10.0.6.65/26
+exit
+interface eth0.3
+no ip address 192.168.3.1/24
+ip address 10.0.6.5/30
+exit
+interface eth0.4
+no ip address 192.168.4.1/24
+ip address 10.0.6.9/30
+exit
+interface lo
+no ip address 127.0.0.1/8
+ip address 10.0.6.23/32
+exit
+router rip
+network eth0.3
+network eth0.4
+network eth0.2
+redistribute connected
+exit
+exit
+show ip route
+
+# Router 4 Configuration file
+
+telnet 192.168.0.1
+
+conf t
+interface lo
+no ip address 127.0.0.1/8
+ip address 10.0.6.24/32
+exit
+interface eth0.2
+no shutdown
+no ip address 192.168.2.1/24
+ip address 10.0.6.1/30
+exit
+interface eth0.1
+no shutdown
+no ip address 192.168.1.1/24
+ip address 10.0.0.6/24
+exit
+router rip
+network eth0.2
+redistribute connected
+exit
+exit
+
+
+
+
