@@ -7,3 +7,6 @@ or this:
 
 network eth0.1
 redistribute connected #FOR WHEN WE USE RIP AND OSPF at the same time
+
+at every pc do
+sudo ip ro add 10.0.0.0/16 via gateway dev eth1
