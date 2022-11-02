@@ -1,0 +1,9 @@
+Oficinas 1 -> (conectado a la interfaz eth0.1 de R1)
+sudo ip addr del 192.168.0.2/24 dev eth1
+sudo ip addr add 10.0.6.130/24 dev eth1
+sudo ip ro add 10.0.0.0/16 via 10.0.6.129 dev eth1
+
+Oficinas 2 ->(conectado a la interfaz eth0.1 de R2)
+sudo ip addr del 192.168.0.2/24 dev eth1
+sudo ip addr add 10.0.6.194/27 dev eth1
+sudo ip ro add 10.0.0.0/16 via 10.0.6.193 dev eth1
