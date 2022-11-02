@@ -2,7 +2,6 @@
 
 sudo ip addr del 192.100.100.100/24 dev eth1
 sudo ip addr add 192.168.0.2/24 dev eth1
-
 telnet 192.168.0.1
 
 conf t
@@ -22,8 +21,10 @@ interface lo
 no ip address 127.0.0.1/8
 ip address 10.0.6.22/32
 exit
-
-
-
+router ospf
+router-id 2
+network 10.0.6.10/30 area 23
+network 10.0.6.14/30 area 12
+redistribute connected
 exit
 show ip route

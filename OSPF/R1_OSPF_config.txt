@@ -21,9 +21,15 @@ interface lo
 no ip address 127.0.0.1/8
 ip address 10.0.6.21/32
 exit
+router ospf
+router-id 1
 
+area 13 range 10.0.6.4/30
+area 12 range 10.0.6.12/30
 
-
+network 10.0.6.4/30 area 13
+network 10.0.6.12/30 area 12
+redistribute connected
 exit
 exit
 show ip route

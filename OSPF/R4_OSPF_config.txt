@@ -17,6 +17,9 @@ no shutdown
 no ip address 192.168.1.1/24
 ip address 10.0.0.6/24
 exit
+router ospf
+router-id 4
+network 10.0.6.0/30 area 34
 
 
 
