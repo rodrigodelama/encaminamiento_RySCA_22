@@ -1,21 +1,24 @@
 # Router 4 Configuration file
 
+sudo ip addr del 192.100.100.100/24 dev eth1
+sudo ip addr add 192.168.0.2/24 dev eth1
+
 telnet 192.168.0.1
 
 conf t
-interface lo
-no ip address 127.0.0.1/8
-ip address 10.0.6.24/32
+interface eth0.1
+no shutdown
+no ip address 192.168.1.1/24
+ip address 10.0.0.6/24
 exit
 interface eth0.2
 no shutdown
 no ip address 192.168.2.1/24
 ip address 10.0.6.1/30
 exit
-interface eth0.1
-no shutdown
-no ip address 192.168.1.1/24
-ip address 10.0.0.6/24
+interface lo
+no ip address 127.0.0.1/8
+ip address 10.0.6.24/32
 exit
 router ospf
 router-id 4
