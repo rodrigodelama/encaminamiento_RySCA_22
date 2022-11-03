@@ -23,8 +23,9 @@ ip address 10.0.6.21/32
 exit
 router ospf
 router-id 1
-network 10.0.6.4/30 area 6
-network 10.0.6.12/30 area 6
+area 10.0.6.0 range 10.0.6.0/24
+network 10.0.6.4/30 area 10.0.6.0
+network 10.0.6.12/30 area 10.0.6.0
 redistribute connected
 exit
 exit
