@@ -30,3 +30,4 @@ redistribute connected
 exit
 exit
 show ip route
+show ip ospf

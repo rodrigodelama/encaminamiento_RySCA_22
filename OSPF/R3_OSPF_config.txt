@@ -29,10 +29,10 @@ ip address 10.0.6.23/32
 exit
 router ospf
 router-id 3
-area 10.0.6.0 range 10.0.6.0/24
 network 10.0.6.0/30 area 10.0.6.0
-network 10.0.6.4/30 area 10.0.6.0
-network 10.0.6.8/30 area 10.0.6.0
+network 10.0.6.4/30 area 6
+network 10.0.6.8/30 area 6
 exit
 exit
 show ip route
+show ip ospf
