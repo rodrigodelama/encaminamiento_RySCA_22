@@ -28,10 +28,11 @@ no ip address 127.0.0.1/8
 ip address 10.0.6.23/32
 exit
 router ospf
-router-id 3
+router-id 10.0.6.9
 network 10.0.6.0/30 area 10.0.6.0
-network 10.0.6.4/30 area 6
-network 10.0.6.8/30 area 6
+network 10.0.6.8/30 area 10.0.6.0
+network 10.0.6.12/30 area 10.0.6.0
+redistribute connected
 exit
 exit
 show ip route
