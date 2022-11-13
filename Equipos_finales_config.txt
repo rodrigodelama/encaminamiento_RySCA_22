@@ -1,3 +1,5 @@
+labs:
+
 Oficinas 1 -> (conectado a la interfaz eth0.1 de R1)
 sudo ip addr del 192.168.0.2/24 dev eth1
 sudo ip addr add 10.0.6.130/26 dev eth1
@@ -12,3 +14,17 @@ Servidores -> (conectado a la interfaz eth0.1 de R3)
 sudo ip addr del 192.168.0.2/24 dev eth1
 sudo ip addr add 10.0.6.66/26 dev eth1
 sudo ip ro add 10.0.0.0/16 via 10.0.6.65 dev eth1
+
+lightning:
+
+Oficinas 1 -> (conectado a la interfaz eth0.1 de R1)
+sudo ip addr del 192.100.100.1/24 dev eth1
+sudo ip addr add 10.0.6.130/26 dev eth1
+sudo ip ro add 10.0.0.0/16 via 10.0.6.129 dev eth1
+
+Oficinas 2 -> (conectado a la interfaz eth0.1 de R2)
+sudo ip addr del 192.100.100.3/24 dev eth1
+sudo ip addr add 10.0.6.194/27 dev eth1
+sudo ip ro add 10.0.0.0/16 via 10.0.6.193 dev eth1
+
+(no hay terminal de acceso a un equipo en Servidores)
