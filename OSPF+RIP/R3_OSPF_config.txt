@@ -1,0 +1,46 @@
+# Router 3 Configuration file
+
+sudo ip addr del 192.100.100.100/24 dev eth1
+sudo ip addr add 192.168.0.2/24 dev eth1
+
+telnet 192.168.0.1
+
+conf t
+interface eth0.1
+no ip address 192.168.1.1/24
+ip address 10.0.6.65/26
+exit
+interface eth0.2
+no shutdown
+no ip address 192.168.2.1/24
+ip address 10.0.6.2/30
+exit
+interface eth0.3
+no ip address 192.168.3.1/24
+ip address 10.0.6.5/30
+exit
+interface eth0.4
+no ip address 192.168.4.1/24
+ip address 10.0.6.9/30
+exit
+interface lo
+no ip address 127.0.0.1/8
+ip address 10.0.6.23/32
+exit
+router ospf
+router-id 10.0.6.2
+network 10.0.6.0/30 area 10.0.6.0
+network 10.0.6.8/30 area 10.0.6.0
+network 10.0.6.4/30 area 10.0.6.0
+network 10.0.6.64/26 area 10.0.6.0
+redistribute connected
+exit
+router rip
+network eth0.3
+network eth0.4
+network eth0.2
+redistribute connected
+exit
+exit
+show ip route
+show ip ospf
