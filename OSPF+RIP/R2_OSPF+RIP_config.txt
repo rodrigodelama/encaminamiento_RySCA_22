@@ -21,13 +21,6 @@ interface lo
 no ip address 127.0.0.1/8
 ip address 10.0.6.22/32
 exit
-router ospf
-router-id 10.0.6.10
-network 10.0.6.8/30 area 10.0.6.0
-network 10.0.6.12/30 area 10.0.6.0
-network 10.0.6.192/27 area 10.0.6.0
-redistribute connected
-exit
 router rip
 network eth0.3
 network eth0.2
