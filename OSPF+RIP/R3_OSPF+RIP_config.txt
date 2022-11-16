@@ -38,7 +38,6 @@ exit
 router rip
 network eth0.3
 network eth0.4
-network eth0.2
 redistribute connected
 exit
 exit

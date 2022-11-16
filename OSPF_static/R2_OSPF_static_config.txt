@@ -25,7 +25,6 @@ interface lo
 no ip address 127.0.0.1/8
 ip address 10.0.6.22/32
 exit
-
 ip route 172.20.0.0/24 172.16.0.100
 router ospf
 router-id 10.0.6.10
