@@ -28,9 +28,6 @@ network 10.0.6.12/30 area 10.0.6.0
 network 10.0.6.192/27 area 10.0.6.0
 redistribute connected
 exit
-
-
-
 exit
 show ip route
 show ip ospf
