@@ -23,7 +23,8 @@ exit
 router ospf
 router-id 10.0.6.1
 network 10.0.6.0/30 area 10.0.6.0
-network 10.0.0.0/24 area 10.0.0.0
+network 10.0.0.0/24 area 0.0.0.0
+
 exit
 exit
 show ip route

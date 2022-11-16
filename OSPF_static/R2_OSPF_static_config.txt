@@ -17,20 +17,23 @@ interface eth0.3
 no ip address 192.168.3.1/24
 ip address 10.0.6.10/30
 exit
+interface eth0.4
+no ip address 192.168.4.1/24
+ip address 172.16.0.6/24
+exit
 interface lo
 no ip address 127.0.0.1/8
 ip address 10.0.6.22/32
 exit
+
+ip route 172.20.0.0/24 172.16.0.100
 router ospf
 router-id 10.0.6.10
 network 10.0.6.8/30 area 10.0.6.0
 network 10.0.6.12/30 area 10.0.6.0
 network 10.0.6.192/27 area 10.0.6.0
-redistribute connected
+redistribute static
 exit
-
-
-
 exit
 show ip route
 show ip ospf

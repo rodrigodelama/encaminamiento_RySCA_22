@@ -1,0 +1,2 @@
+conf t
+interface eth0.2
